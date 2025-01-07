@@ -1,0 +1,3 @@
+[submodule "themes/freemind.bithack"]
+	path = themes/freemind.bithack
+	url = https://github.com/Ares-X/hexo-theme-freemind.bithack.git
