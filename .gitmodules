@@ -4,3 +4,5 @@
 [submodule "hexo-theme-freemind.bithack"]
 	path = hexo-theme-freemind.bithack
 	url = https://github.com/Indigo-10/hexo-theme-freemind.bithack
+[submodule ".\\themes\\freemind.bithack\\"]
+	url = https://github.com/Indigo-10/hexo-theme-freemind.bithack
