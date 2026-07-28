@@ -187,7 +187,7 @@ indigo@LAPTOP-O49SNQSR:/mnt/c/Users/jonat/Desktop/cloud/MicroBurst/Azure-Blob-In
 Import-Module MSAL.PS
 
 # Username: marcus@megabigtech.com
-# Password: TheEagles12345!
+# Password: [REDACTED]
 
 # Use Microsoft's public Azure PowerShell client ID
 $ClientId = "04b07795-8ddb-461a-bbee-02f9e1bf7b46"
@@ -222,7 +222,7 @@ $ouName = "Review"
 $staleDays = 90  # Computers not modified in the last 90 days will be considered stale
 
 # Hardcoded credentials
-$securePassword = ConvertTo-SecureString "MegaBigTech123!" -AsPlainText -Force
+$securePassword = ConvertTo-SecureString "[REDACTED]" -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential ("marcus_adm", $securePassword)
 
 # Get the current date
@@ -247,7 +247,7 @@ Get-ADComputer -Filter {(LastLogonTimeStamp -lt $thresholdDate) -and (Enabled -e
   }
 ```
 
-There are a lot of things of interest here. First being hardcoded credentials stored in both scripts. `entra_users.ps1` seems to hold credentials for an Azure AD account `marcus@megabigtech.com:TheEagles12345!`, and `stale_computer_accounts.ps1` seems to hold credentials for a domain administrator account `marcus_adm:MegaBigTech123!`.
+There are a lot of things of interest here. First being hardcoded credentials stored in both scripts. `entra_users.ps1` seems to hold credentials for an Azure AD account `marcus@megabigtech.com:[REDACTED]`, and `stale_computer_accounts.ps1` seems to hold credentials for a domain administrator account `marcus_adm:[REDACTED]`.
 
 We can verify these credentials by both running the script and signing in with `az cli`. `entra_users.ps1` is dependent on the `MSAL.PS` module, so we must first install the module, then run the script.
 
