@@ -181,7 +181,7 @@ Tags         :
 
 
 PS C:\Users\jonat\Desktop\cloud> Get-AzKeyVaultSecret -VaultName breakglass-vault -Name PrivilegedAccess -AsPlainText
-eb9fd8e8dfbd5712a2e6071e6000aa35
+[REDACTED]
 ```
 
 This application has access to an Azure Key Vault called `breakglass-vault`. We can enumerate that vault and see it holds the secret called `PrivilegedAccess`, and finally we can retrieve that secret and reveal the flag.
